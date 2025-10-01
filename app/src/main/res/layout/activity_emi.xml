@@ -9,23 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:text="EMI Calculator"
-            android:textSize="20sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
         <EditText
             android:id="@+id/etLoan"
-            android:hint="Loan amount (P)"
+            android:hint="Loan amount"
             android:inputType="numberDecimal"
-            android:layout_marginTop="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/etRate"
-            android:hint="Annual interest rate (%)"
+            android:hint="Interest rate (%)"
             android:inputType="numberDecimal"
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
@@ -33,8 +26,8 @@
 
         <EditText
             android:id="@+id/etTenure"
-            android:hint="Tenure (years)"
-            android:inputType="numberDecimal"
+            android:hint="Tenure (months)"
+            android:inputType="number"
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -42,17 +35,16 @@
         <Button
             android:id="@+id/btnCalculate"
             android:text="Calculate EMI"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/tvEmiResult"
-            android:text="Monthly EMI: "
             android:layout_marginTop="18dp"
-            android:textSize="16sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+        <TextView
+            android:id="@+id/tvEmiResult"
+            android:text="Monthly EMI will appear here"
+            android:textSize="16sp"
+            android:layout_marginTop="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 </ScrollView>

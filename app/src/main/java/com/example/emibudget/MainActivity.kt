@@ -2,8 +2,8 @@ package com.example.emibudget
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,15 +11,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btnEmi = findViewById<Button>(R.id.btnEmi)
-        val btnIncomeExpense = findViewById<Button>(R.id.btnIncomeExpense)
+        val btnIncomeExpenses = findViewById<Button>(R.id.btnIncomeExpenses)
         val btnBalance = findViewById<Button>(R.id.btnBalance)
 
         btnEmi.setOnClickListener {
             startActivity(Intent(this, EmiActivity::class.java))
         }
-        btnIncomeExpense.setOnClickListener {
-            startActivity(Intent(this, IncomeExpenseActivity::class.java))
+
+        btnIncomeExpenses.setOnClickListener {
+            startActivity(Intent(this, IncomeExpensesActivity::class.java))
         }
+
         btnBalance.setOnClickListener {
             startActivity(Intent(this, BalanceActivity::class.java))
         }

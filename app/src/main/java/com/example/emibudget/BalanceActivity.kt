@@ -1,44 +1,34 @@
 package com.example.emibudget
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import android.widget.Button
 import android.widget.TextView
-import java.text.NumberFormat
-import java.util.Locale
+import androidx.appcompat.app.AppCompatActivity
 
 class BalanceActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_balance)
 
-        val tvSummary = findViewById<TextView>(R.id.tvSummary)
-        val btnRefresh = findViewById<Button>(R.id.btnRefresh)
+        supportActionBar?.title = "Budget Balance"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        fun update() {
-            val income = Prefs.getIncome(this)
-            val expense = Prefs.getExpense(this)
-            val emi = Prefs.getEmi(this)
-            val totalOut = expense + emi
-            val balance = income - totalOut
+        val tvBalance = findViewById<TextView>(R.id.tvBalance)
 
-            val nf = NumberFormat.getCurrencyInstance(Locale.getDefault())
-            val s = StringBuilder()
-            s.append("Monthly Income: ${nf.format(income)}\n")
-            s.append("Monthly Expenses: ${nf.format(expense)}\n")
-            s.append("Monthly EMI: ${nf.format(emi)}\n")
-            s.append("--------------------------\n")
-            s.append(
-                if (balance >= 0)
-                    "Monthly Savings: ${nf.format(balance)}"
-                else
-                    "Monthly Deficit: ${nf.format(-balance)}"
-            )
-            tvSummary.text = s.toString()
+        val income = Prefs.getIncome(this)
+        val expenses = Prefs.getExpenses(this)
+        val emi = Prefs.getEmi(this)
+
+        val savings = income - (expenses + emi)
+
+        tvBalance.text = if (savings >= 0) {
+            "You are saving: %.2f".format(savings)
+        } else {
+            "You are in deficit: %.2f".format(-savings)
         }
+    }
 
-        btnRefresh.setOnClickListener { update() }
-
-        update()
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }
