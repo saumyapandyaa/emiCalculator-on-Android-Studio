@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="24dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="@drawable/bg_gradient">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:text="💰 EMI Calculator"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
         <EditText
             android:id="@+id/etLoan"
             android:hint="Loan amount"
             android:inputType="numberDecimal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_bg"
+            android:padding="12dp"/>
 
         <EditText
             android:id="@+id/etRate"
@@ -22,7 +34,9 @@
             android:inputType="numberDecimal"
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_bg"
+            android:padding="12dp"/>
 
         <EditText
             android:id="@+id/etTenure"
@@ -30,20 +44,22 @@
             android:inputType="number"
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_bg"
+            android:padding="12dp"/>
 
         <Button
             android:id="@+id/btnCalculate"
-            android:text="Calculate EMI"
-            android:layout_marginTop="18dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            style="@style/FancyButtonStyle"
+            android:text="📈 Calculate EMI"
+            android:layout_marginTop="20dp"/>
 
         <TextView
             android:id="@+id/tvEmiResult"
             android:text="Monthly EMI will appear here"
             android:textSize="16sp"
-            android:layout_marginTop="18dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>

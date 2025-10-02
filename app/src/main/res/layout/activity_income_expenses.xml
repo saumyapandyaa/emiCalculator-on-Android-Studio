@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="24dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="@drawable/bg_gradient">
 
     <LinearLayout
         android:orientation="vertical"
@@ -10,18 +11,22 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="Income and Expenses"
-            android:textSize="20sp"
+            android:text="📊 Income and Expenses"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/etIncome"
             android:hint="Monthly income"
             android:inputType="numberDecimal"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="16dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_bg"
+            android:padding="12dp" />
 
         <EditText
             android:id="@+id/etExpense"
@@ -29,13 +34,14 @@
             android:inputType="numberDecimal"
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_bg"
+            android:padding="12dp" />
 
         <Button
             android:id="@+id/btnSaveIncExp"
-            android:text="Save"
-            android:layout_marginTop="18dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            style="@style/FancyButtonStyle"
+            android:text="💾 Save"
+            android:layout_marginTop="20dp" />
     </LinearLayout>
 </ScrollView>

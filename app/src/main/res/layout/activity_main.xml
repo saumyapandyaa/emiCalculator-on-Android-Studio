@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@drawable/bg_gradient"
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btnEmi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="EMI Calculator" />
+        style="@style/FancyButtonStyle"
+        android:text="💰 EMI Calculator" />
 
     <Button
         android:id="@+id/btnIncomeExpenses"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Income and Expenses"
+        style="@style/FancyButtonStyle"
+        android:text="📊 Income and Expenses"
         android:layout_marginTop="16dp" />
 
     <Button
         android:id="@+id/btnBalance"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Budget Balance"
+        style="@style/FancyButtonStyle"
+        android:text="⚖️ Budget Balance"
         android:layout_marginTop="16dp" />
 
 </LinearLayout>
